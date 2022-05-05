@@ -12,6 +12,12 @@ You can configure the following:
 |---------|-----------|----|-------|
 |image.pullPolicy|etcd image pull policy|string|IfNotPresent|
 |auth.rbac.rootPassword|Root user password. The root user is always root|string|""|
+
+### etcd statefulset parameters
+
+|Parameter|Description|Type|Default|
+|---------|-----------|----|-------|
+|replicaCount|	Number of etcd replicas to deploy|integer|1|
 |podManagementPolicy|Pod management policy for the etcd statefulset|string|Parallel|
 |containerPorts.client|Client port to expose at container level|integer|2379|
 |containerPorts.peer|Peer port to expose at container level|integer|2380|
@@ -23,7 +29,7 @@ You can configure the following:
 |livenessProbe.timeoutSeconds|Timeout seconds for livenessProbe|integer|5|
 |livenessProbe.failureThreshold|Failure threshold for livenessProbe|integer|5|
 |livenessProbe.successThreshold|Success threshold for livenessProbe|integer|1|
-|readinessProbe.initialDelaySeconds|Initial delay seconds for readinessProbe|intger|60|
+|readinessProbe.initialDelaySeconds|Initial delay seconds for readinessProbe|integer|60|
 |readinessProbe.periodSeconds|Period seconds for readinessProbe|integer|10|
 |readinessProbe.timeoutSeconds|Timeout seconds for readinessProbe|integer|5|
 |readinessProbe.failureThreshold|Failure threshold for readinessProbe|integer|5|
@@ -41,7 +47,7 @@ You can configure the following:
 |Parameter|Description|Type|Default|
 |---------|-----------|----|-------|
 |persistence.storageClass|Persistent Volume Storage Class|string|""|
-|persistence.size|PVC Storage Request for etcd data volume|ineger|8Gi|
+|persistence.size|PVC Storage Request for etcd data volume|integer|8Gi|
 
 ### Network Policy parameters
 
